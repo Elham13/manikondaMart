@@ -4,9 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import Home from '../screens/Home';
-import Vegetables from '../screens/FruitsAndVegetables';
-import DairyAndBakery from '../screens/DairyAndBakery';
-import Grocery from '../screens/Grocery';
 import Wishlist from '../screens/Wishlist';
 import OrderHistory from '../screens/OrderHistory';
 import MyAccount from '../screens/MyAccount';
@@ -30,49 +27,15 @@ const HomeStack = () => {
             <Stack.Screen 
                 name='Home' 
                 component={Home} 
-                options={({ navigation  }) => ({headerTitle: () => <Header navigation={navigation}  title="Home" showNav={true} />})}
-            />
-            <Stack.Screen 
-                name='Vegetables' 
-                component={Vegetables} 
                 options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Fruits & Vegitables" showNav={false} />,
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
-                        </TouchableOpacity>
-                    )
-                })}
-            />
-            <Stack.Screen 
-                name='DairyAndBakery' 
-                component={DairyAndBakery} 
-                options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Dairy & Bakery" showNav={false} />,
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
-                        </TouchableOpacity>
-                    )
-                })}
-            />
-            <Stack.Screen 
-                name='Grocery' 
-                component={Grocery} 
-                options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Grocery" showNav={false} />,
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
-                        </TouchableOpacity>
-                    )
+                    headerTitle: () => <Header navigation={navigation}  title="Home" showNav={true} showIcons={true} />
                 })}
             />
             <Stack.Screen 
                 name='CategoryWiseProducts' 
                 component={CategoryWiseProducts} 
                 options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Something" showNav={false} />,
+                    headerTitle: () => <Header navigation={navigation}  title="Something" showNav={false} showIcons={true} />,
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
@@ -84,7 +47,7 @@ const HomeStack = () => {
                 name='SingleProduct' 
                 component={SingleProduct} 
                 options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Something1" showNav={false} />,
+                    headerTitle: () => <Header navigation={navigation}  title="Something1" showNav={false} showIcons={true} />,
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
@@ -96,7 +59,7 @@ const HomeStack = () => {
                 name='NotificationPage' 
                 component={NotificationPage} 
                 options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Notifications" showNav={false} />,
+                    headerTitle: () => <Header navigation={navigation}  title="Notifications" showNav={false} showIcons={true} />,
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
@@ -108,7 +71,7 @@ const HomeStack = () => {
                 name='Cart' 
                 component={Cart} 
                 options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Cart" showNav={false} />,
+                    headerTitle: () => <Header navigation={navigation}  title="Cart" showNav={false} showIcons={true} />,
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
@@ -120,7 +83,7 @@ const HomeStack = () => {
                 name='Profile' 
                 component={Profile} 
                 options={({ navigation  }) => ({
-                    headerTitle: () => <Header navigation={navigation}  title="Profile" showNav={false} />,
+                    headerTitle: () => <Header navigation={navigation}  title="Profile" showNav={false} showIcons={true} />,
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
@@ -197,7 +160,14 @@ const MyAccountStack = () => {
             <Stack.Screen 
                 name='MyAccount' 
                 component={MyAccount}
-                options={({ navigation  }) => ({headerTitle: () => <Header navigation={navigation} showNav={true} title="My Account" />})}
+                options={({ navigation  }) => ({
+                    headerTitle: () => <Header navigation={navigation} showNav={false} title="My Account" showIcons={false} />,
+                    headerLeft: () => (
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <FontAwesome5 name='angle-left' size={20} style={styles.icon} />
+                        </TouchableOpacity>
+                    ),
+                })}
             />
         </Stack.Navigator>
     )

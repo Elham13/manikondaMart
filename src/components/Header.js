@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Badge} from 'react-native-paper';
  
-const Header = ({navigation, title, showNav}) => {
+const Header = ({navigation, title, showNav, showIcons}) => {
     const openMenu = () => {
         navigation.openDrawer();
     }
@@ -25,20 +25,22 @@ const Header = ({navigation, title, showNav}) => {
                 ) : null}
                 <Text style={styles.headerTxt}>{title}</Text>
             </View>
-            <View style={styles.right}>
-                <TouchableOpacity style={styles.btn} onPress={searchPress}>
-                    <Icon name='search' size={18} color="#000" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btn} onPress={notificationPress}>
-                    <Badge size={15} visible={true} style={styles.badge}>3</Badge>
-                    <Icon name='notifications' size={18} color="#000" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btn} onPress={cartPress}>
-                    <Badge size={15} visible={false} style={styles.badge}>3</Badge>
-                    <Icon name='shopping-cart' size={18} color="#000" />
-                </TouchableOpacity>
-                
-            </View>
+            {showIcons ? (
+                <View style={styles.right}>
+                    <TouchableOpacity style={styles.btn} onPress={searchPress}>
+                        <Icon name='search' size={18} color="#000" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn} onPress={notificationPress}>
+                        <Badge size={15} visible={true} style={styles.badge}>3</Badge>
+                        <Icon name='notifications' size={18} color="#000" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn} onPress={cartPress}>
+                        <Badge size={15} visible={false} style={styles.badge}>3</Badge>
+                        <Icon name='shopping-cart' size={18} color="#000" />
+                    </TouchableOpacity>
+                    
+                </View>
+            ) : null}
         </View> 
     )
 }

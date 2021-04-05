@@ -8,14 +8,14 @@ const CategoryWiseProducts = ({route, navigation}) => {
     const [movies, setMovies] = useState([]);
 
     useEffect(async () => {
-        navigation.setOptions({headerTitle: () => <Header navigation={navigation}  title={route.params.headerTitle} showNav={false} />})
+        navigation.setOptions({headerTitle: () => <Header navigation={navigation}  title={route.params.headerTitle} showNav={false} showIcons={true} />})
         const data = await getMovies();
         setMovies(data)
     }, []);
 
     return (
         <View>
-            <ListOfProducts data={movies} />
+            <ListOfProducts data={movies} nav={navigation} />
         </View>
     )
 }

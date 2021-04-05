@@ -6,7 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const {width, height} = Dimensions.get('window');
 
-const listOfProducts = ({data}) => {
+const listOfProducts = ({data, nav}) => {
 
     return (
         <View>
@@ -31,7 +31,9 @@ const listOfProducts = ({data}) => {
                             </View>
                             <View>
                                 <Image style={styles.allProductsImg} source={{uri: item.poster}} />
-                                <TouchableOpacity style={styles.contenWrapper}>
+                                <TouchableOpacity style={styles.contenWrapper} onPress={() => nav.navigate('SingleProduct', {
+                                    headerTitle: 'Something23'
+                                })}>
                                 <Text style={{fontSize: 11}}>Chilli - Green Long, 250g</Text>
                                 <View style={{flexDirection:'row'}}>
                                     <Text style={styles.price1}>&#x20B9;10.00</Text>

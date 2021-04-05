@@ -30,9 +30,9 @@ const DrawerContent = (props) => {
     <View style={{ flex: 1, backgroundColor: '#ccc' }}>
       <DrawerContentScrollView {...props}>
         <View style={styles.drawerContent}>
-          <TouchableOpacity style={styles.imgWrapper} onPress={() => props.navigation.navigate('Profile')}>
+          <View style={styles.imgWrapper}>
             <Image style={styles.img} source={require('../assets/logo.png')} />
-          </TouchableOpacity>
+          </View>
             <View style={styles.userInfo}>
               <Text style={styles.username}>Elhamuddin</Text>
               <Text style={styles.email}>wolverine.elham@gmail.com</Text>
@@ -48,7 +48,9 @@ const DrawerContent = (props) => {
               <MaterialIcons name="double-arrow" size={10} color="#333" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.drawerNav} onPress={() => props.navigation.navigate('Vegetables')}>
+            <TouchableOpacity style={styles.drawerNav} onPress={() => props.navigation.navigate('CategoryWiseProducts', {
+              headerTitle: 'Fruits & Vegetables'
+            } )}>
               <View style={styles.navTxtWrapper}>
                 <MaterialIcons name="circle" size={10} color="#333" />
                 <Text style={styles.navTxt}>Fruits & Vegetables</Text>
@@ -56,7 +58,9 @@ const DrawerContent = (props) => {
               <MaterialIcons name="double-arrow" size={10} color="#333" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.drawerNav} onPress={() => props.navigation.navigate('DairyAndBakery')}>
+            <TouchableOpacity style={styles.drawerNav} onPress={() => props.navigation.navigate('CategoryWiseProducts', {
+              headerTitle: 'Dairy & Bakery'
+            })}>
               <View style={styles.navTxtWrapper}>
                 <MaterialIcons name="circle" size={10} color="#333" />
                 <Text style={styles.navTxt}>Dairy & Bakery</Text>
@@ -64,7 +68,9 @@ const DrawerContent = (props) => {
               <MaterialIcons name="double-arrow" size={10} color="#333" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.drawerNav} onPress={() => props.navigation.navigate('Grocery')}>
+            <TouchableOpacity style={styles.drawerNav} onPress={() => props.navigation.navigate('CategoryWiseProducts', {
+              headerTitle: 'Grocery'
+            })}>
               <View style={styles.navTxtWrapper}>
                 <MaterialIcons name="circle" size={10} color="#333" />
                 <Text style={styles.navTxt}>Grocery</Text>
