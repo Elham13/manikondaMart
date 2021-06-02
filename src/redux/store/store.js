@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { productReducer } from "../reducers/reducers";
 
-const reducer = combineReducers({
+const reducer = combineReducers({ 
     product: productReducer
 });
 

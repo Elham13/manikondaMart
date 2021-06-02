@@ -3,9 +3,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import {
     HomeStack,
-    VegStack,
-    DAndBStack,
-    GroceryStack,
     PrivacyPolicyStack,
     TermsOfServiceStack,
     ReturnPolicyStack,
@@ -15,9 +12,9 @@ import {
     SettingsStack
 } from './stackNavigator';
 import DrawerContent from '../components/DrawerContent';
-
+ 
 const Drawer = createDrawerNavigator();
-
+ 
 const DrawerNavigator = () => {
     return (
         <Drawer.Navigator drawerContent={props => <DrawerContent { ...props } />} initialRouteName="Home" >
